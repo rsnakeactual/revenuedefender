@@ -4,7 +4,7 @@ body, html {
   display: flex;
   flex-direction: column;
 }
-  
+
 .content {
   flex-grow: 1;
   display: flex;
@@ -15,30 +15,46 @@ body, html {
   color: #fff;
   padding: 2rem;
 }
-  
+
 .content-inner {
   max-width: 800px;
   margin: 0 auto;
 }
-  
+
 h1 {
   font-size: 3.5rem;
   font-weight: bold;
   margin-bottom: 1.5rem;
 }
-  
+
 p {
   font-size: 1.2rem;
   margin-bottom: 1rem;
 }
-  
+
 a {
   color: #ffc107;
   text-decoration: none;
   font-weight: bold;
 }
-  
+
 a:hover {
   color: #e0a800;
   text-decoration: underline;
+}
+
+.pricing-header {
+  max-width: 700px;
+}
+
+.card-deck .card {
+  min-width: 220px;
+}
+
+.feature-table th, .feature-table td {
+  text-align: center;
+}
+
+.feature-table th:first-child, .feature-table td:first-child {
+  text-align: left;
 }
