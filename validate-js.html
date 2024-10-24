@@ -3,7 +3,7 @@
 async function checkAuthentication() {
   try {
     // Make a request to the endpoint that returns the authentication status
-    let response = await fetch('/rd-verify', {
+    let response = await fetch('/rd-validate', {
       method: 'GET',  // Use the appropriate method (GET, POST, etc.)
       headers: {
         'Content-Type': 'application/json'
