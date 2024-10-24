@@ -1,42 +1,40 @@
 <div id="auth-status"></div> <!-- The div where the status will be displayed -->
 <script>
 async function checkAuthentication() {
+  let authStatusDiv = document.getElementById('auth-status');
+  
   try {
-    // Make a request to the endpoint that returns the authentication status
+    console.log('Attempting to fetch authentication status...');
     let response = await fetch('/rd-validate', {
-      method: 'GET',  // Use the appropriate method (GET, POST, etc.)
+      method: 'GET',
       headers: {
         'Content-Type': 'application/json'
-      }
+      },
+      credentials: 'include' // Include cookies in the request
     });
 
-    // Ensure the response is okay (status code 200-299)
+    console.log('Fetch response received:', response);
+
     if (!response.ok) {
-      throw new Error('Network response was not ok');
+      throw new Error(`HTTP error! status: ${response.status}`);
     }
 
-    // Parse the response JSON
     let data = await response.json();
+    console.log('Parsed response data:', data);
 
-    // Get the div where we want to display the status
-    let authStatusDiv = document.getElementById('auth-status');
-
-    // Check the authentication status based on the "valid" field
     if (data.valid === 1) {
       authStatusDiv.innerHTML = 'Success: User is authenticated';
-      authStatusDiv.style.color = 'green'; // Optionally set success style
+      authStatusDiv.style.color = 'green';
     } else {
       authStatusDiv.innerHTML = 'Failure: User is not authenticated';
-      authStatusDiv.style.color = 'red'; // Optionally set failure style
+      authStatusDiv.style.color = 'red';
     }
 
   } catch (error) {
-    console.error('There was a problem with the fetch operation:', error);
+    console.error('Detailed error:', error);
     
-    // Update the div in case of an error
-    let authStatusDiv = document.getElementById('auth-status');
-    authStatusDiv.innerHTML = 'Error: Could not check authentication';
-    authStatusDiv.style.color = 'orange'; // Optionally set error style
+    authStatusDiv.innerHTML = `Error: ${error.message}`;
+    authStatusDiv.style.color = 'orange';
   }
 }
 
