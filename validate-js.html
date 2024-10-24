@@ -1,1 +1,45 @@
-<script src="https://revenuedefender.com/rd-validate"></script>
+<div id="auth-status"></div> <!-- The div where the status will be displayed -->
+<script>
+async function checkAuthentication() {
+  try {
+    // Make a request to the endpoint that returns the authentication status
+    let response = await fetch('/rd-verify', {
+      method: 'GET',  // Use the appropriate method (GET, POST, etc.)
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+
+    // Ensure the response is okay (status code 200-299)
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+
+    // Parse the response JSON
+    let data = await response.json();
+
+    // Get the div where we want to display the status
+    let authStatusDiv = document.getElementById('auth-status');
+
+    // Check the authentication status based on the "valid" field
+    if (data.valid === 1) {
+      authStatusDiv.innerHTML = 'Success: User is authenticated';
+      authStatusDiv.style.color = 'green'; // Optionally set success style
+    } else {
+      authStatusDiv.innerHTML = 'Failure: User is not authenticated';
+      authStatusDiv.style.color = 'red'; // Optionally set failure style
+    }
+
+  } catch (error) {
+    console.error('There was a problem with the fetch operation:', error);
+    
+    // Update the div in case of an error
+    let authStatusDiv = document.getElementById('auth-status');
+    authStatusDiv.innerHTML = 'Error: Could not check authentication';
+    authStatusDiv.style.color = 'orange'; // Optionally set error style
+  }
+}
+
+// Call the function when needed
+checkAuthentication();
+</script>
