@@ -7,7 +7,7 @@ let loggedinnav = [{
   "name": "Dashboard",
   "href": "/rd-dashboard"
 }, {
-  "name": "Settings",
+  "name": "Account Settings",
   "href": "/rd-settings"
 }];
 
@@ -22,13 +22,20 @@ let loggedoutnav = [{
   "href": "/rd-forgot"
 }];
 
-async function updateNavigation(isAuthenticated) {
+async function updateNavigation(isAuthenticated, isAdmin) {
   const dropdownMenu = document.querySelector('.dropdown-menu');
   if (!dropdownMenu) return;
 
   dropdownMenu.innerHTML = ''; // Clear existing menu items
 
-  const navItems = isAuthenticated ? loggedinnav : loggedoutnav;
+  let navItems = isAuthenticated ? [...loggedinnav] : loggedoutnav;
+
+  if (isAuthenticated && isAdmin) {
+    navItems.push({
+      "name": "Admin Panel",
+      "href": "/rd-admin"
+    });
+  }
 
   navItems.forEach(item => {
     const li = document.createElement('li');
@@ -62,7 +69,8 @@ async function checkAuthentication() {
     console.log('Parsed response data:', data);
 
     const isAuthenticated = data.valid === 1;
-    updateNavigation(isAuthenticated);
+    const isAdmin = data.admin === 1;
+    updateNavigation(isAuthenticated, isAdmin);
 
     // Optional: update auth status display
     let authStatusDiv = document.getElementById('auth-status');
@@ -73,7 +81,7 @@ async function checkAuthentication() {
 
   } catch (error) {
     console.error('Detailed error:', error);
-    updateNavigation(false); // Default to logged out nav if there's an error
+    updateNavigation(false, false);
     
     // Optional: update auth status display
     let authStatusDiv = document.getElementById('auth-status');
