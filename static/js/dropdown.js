@@ -28,7 +28,7 @@ async function updateNavigation(isAuthenticated, isAdmin) {
 
   dropdownMenu.innerHTML = ''; // Clear existing menu items
 
-  let navItems = isAuthenticated ? [...loggedinnav] : loggedoutnav;
+  let navItems = isAuthenticated ? loggedinnav : loggedoutnav;
 
   if (isAuthenticated && isAdmin) {
     navItems.push({
