@@ -1,5 +1,3 @@
-let navigation = document.getElementById('navigation');
-
 let loggedinnav = [{
   "name": "Logout",
   "href": "/rd-logout"
@@ -95,5 +93,20 @@ async function checkAuthentication() {
   }
 }
 
-// Call the function when the DOM is fully loaded
-document.addEventListener('DOMContentLoaded', checkAuthentication);
+// Add this at the bottom, before the DOMContentLoaded event listener
+function initializeNavbar() {
+  const navbarToggler = document.querySelector('.navbar-toggler');
+  const navbarCollapse = document.querySelector('.navbar-collapse');
+  
+  if (navbarToggler && navbarCollapse) {
+    navbarToggler.addEventListener('click', () => {
+      navbarCollapse.classList.toggle('show');
+    });
+  }
+}
+
+// Update the DOMContentLoaded listener to include the navbar initialization
+document.addEventListener('DOMContentLoaded', () => {
+  checkAuthentication();
+  initializeNavbar();
+});
