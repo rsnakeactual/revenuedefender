@@ -31,9 +31,12 @@ async function updateNavigation(isAuthenticated, isAdmin) {
 
   let navItems = isAuthenticated ? loggedinnav : loggedoutnav;
 
-  // Filter out Dashboard and Admin links if we're on those pages
-  const currentPath = window.location.pathname;
-  navItems = navItems.filter(item => item.href !== currentPath);
+  // Filter out only exact path matches
+  const currentPath = window.location.pathname; // This will not include query parameters
+  navItems = navItems.filter(item => {
+    const itemPath = new URL(item.href, window.location.origin).pathname;
+    return itemPath !== currentPath;
+  });
 
   // Add admin panel link if user is admin (and not on admin page)
   if (isAuthenticated && isAdmin && currentPath !== '/rd-admin') {
