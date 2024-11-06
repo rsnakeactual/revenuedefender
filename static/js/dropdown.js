@@ -2,14 +2,14 @@ let loggedinnav = [{
   "name": "Logout",
   "href": "/rd-logout"
 }, {
-  "name": "Change Password",
-  "href": "/rd-dashboard?page=password-reset"
-}, {
   "name": "Dashboard",
   "href": "/rd-dashboard"
 }, {
+  "name": "Change Password",
+  "href": "/rd-dashboard?page=password-reset"
+}, {
   "name": "Account Settings",
-  "href": "/rd-settings"
+  "href": "/rd-dashboard?page=account-settings"
 }];
 
 let loggedoutnav = [{   
@@ -30,6 +30,11 @@ async function updateNavigation(isAuthenticated, isAdmin) {
   dropdownMenu.innerHTML = ''; // Clear existing menu items
 
   let navItems = isAuthenticated ? loggedinnav : loggedoutnav;
+
+  // Filter out Dashboard if we're on the dashboard page
+  if (window.location.pathname === '/rd-dashboard') {
+    navItems = navItems.filter(item => item.href !== '/rd-dashboard');
+  }
 
   if (isAuthenticated && isAdmin) {
     navItems.push({
