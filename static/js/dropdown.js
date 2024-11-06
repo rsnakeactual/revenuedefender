@@ -2,7 +2,7 @@ let loggedinnav = [{
   "name": "Logout",
   "href": "/rd-logout"
 }, {
-  "name": "Password Reset",
+  "name": "Change Password",
   "href": "/rd-dashboard?page=password-reset"
 }, {
   "name": "Dashboard",
