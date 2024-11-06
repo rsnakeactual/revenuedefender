@@ -31,12 +31,12 @@ async function updateNavigation(isAuthenticated, isAdmin) {
 
   let navItems = isAuthenticated ? loggedinnav : loggedoutnav;
 
-  // Only filter out exact matches (including query parameters)
+  // Remove the current page's link from the dropdown
   const currentFullPath = window.location.pathname + window.location.search;
   navItems = navItems.filter(item => item.href !== currentFullPath);
 
   // Add admin panel link if user is admin (and not on admin page)
-  if (isAuthenticated && isAdmin && currentPath !== '/rd-admin') {
+  if (isAuthenticated && isAdmin && currentFullPath !== '/rd-admin') {
     navItems.push({
       "name": "Admin Panel",
       "href": "/rd-admin"
