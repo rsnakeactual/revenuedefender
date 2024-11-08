@@ -1,130 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Revenue Defender</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="./static/styles/style.css" rel="stylesheet">
-    <link rel="preload" href="https://revenuedefender.com/pricing.html" as="document"> 
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="/">Revenue Defender</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="https://revenuedefender.com/pricing.html">Pricing</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Menu
-              </a>
-              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                <!-- Dropdown items will be dynamically inserted here -->
-                <noscript>
-                  <li><a class="dropdown-item" href="/rd-login">Login</a></li>
-                  <li><a class="dropdown-item" href="/rd-register">Register</a></li>
-                </noscript>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  
-    <div class="content">
-      <div class="content-inner">
-        <div class="text-center mb-4">
-          <img src="./static/images/revenuedefender20241030-v2.png" width="250" height="250" alt="Logo for Revenue Defender" class="img-fluid">
-          <h1 class="mt-3">Instant, Secure Launch for Your App — No Compromises on Quality or Speed</h1>
-        </div>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Revenue Defender</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="./static/styles/style.css" rel="stylesheet">
+        <link rel="preload" href="https://revenuedefender.com/pricing.html" as="document"> 
+        <link rel="preload" href="https://revenuedefender.com/rd-contact?page=waitlist" as="document"> 
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/">Revenue Defender</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://revenuedefender.com/pricing.html">Pricing</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Menu
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <!-- Dropdown items will be dynamically inserted here -->
+                                <noscript>
+                                    <li><a class="dropdown-item" href="/rd-login">Login</a></li>
+                                    <li><a class="dropdown-item" href="/rd-register">Register</a></li>
+                                </noscript>
+                            </ul>
+                        </li>
+                        &nbsp;
+                        <li class="nav-item">
+                            <a class="btn btn-custom" href="https://revenuedefender.com/rd-contact?page=waitlist">Join the Waitlist</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
 
-        <!-- Value Propositions -->
-        <div class="row g-4 mb-5">
-          <div class="col-md-4">
-            <div class="card h-100">
-              <div class="card-body">
-                <h3 class="card-title">Launch Fast, Stay Secure</h3>
-                <p class="card-text">Go from concept to launch without months of setup. Revenue Defender handles all security and compliance, letting you focus on building.</p>
-              </div>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container position-relative">
+                <h1>Protect Your Revenue Streams</h1>
+                <p>Experience a revolutionary approach to fraud prevention and revenue security. Revenue Defender is your partner in maximizing profits and safeguarding your business.</p>
+                <a href="#features" class="btn btn-custom mt-4">Join the Waitlist</a>
             </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card h-100">
-              <div class="card-body">
-                <h3 class="card-title">Built-in Compliance & Protection</h3>
-                <p class="card-text">With industry-grade compliance, brute force protection, and Cloudflare's CDN, all essentials are covered from day one.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card h-100">
-              <div class="card-body">
-                <h3 class="card-title">Scale Without Complications</h3>
-                <p class="card-text">Adaptable to your app's needs, Revenue Defender supports Okta and Stripe integrations and is ready when you are.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- CTA Buttons -->
-        <div class="text-center mb-5">
-          <a href="#features" class="btn btn-primary me-3">Discover the Features</a>
-          <a href="#security" class="btn btn-outline-primary">Learn More About Our Security</a>
-        </div>
+        </section>
 
         <!-- Features Section -->
-        <div id="features" class="row g-4 mb-5">
-          <h2 class="text-center mb-4">Key Features</h2>
-          <div class="col-md-2"></div>
-          <div class="col-md-8">
-            <ul class="feature-list"></ul>
-              <li><strong>Multi-Platform Integration:</strong> Easily integrates with tools like Okta and Stripe for advanced user management and billing.</li>
-              <li><strong>10x Faster Launch Times:</strong> Experience faster time-to-market with Revenue Defender's streamlined setup.</li>
-              <li><strong>99.99% Uptime Guarantee:</strong> Consistent, reliable performance backed by Cloudflare's CDN.</li>
-              <li><strong>3 Months Free for Startups:</strong> Launch your app without the upfront costs and focus on growth from day one.</li>
-            </ul>
-          </div>
-          <div class="col-md-2"></div>
-        </div>
+        <section class="feature-section" id="features">
+            <div class="container">
+                <h2 class="feature-title">Powerful Tools at Your Fingertips</h2>
+                <p class="feature-description">
+                    Explore key features designed to protect and optimize your website.
+                </p>
+                <div class="row mt-4">
+                    <div class="card col-md-4 bg-dark">
+                        <div class="card-body">
+                            <h3 class="feature-title">Launch Fast, Stay Secure</h3>
+                            <p class="card-text text-light">
+                                Go from concept to launch without months of setup. Revenue Defender handles all security and compliance, letting you focus on building.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card col-md-4 bg-dark">
+                        <div class="card-body">
+                            <h3 class="feature-title">Built-in Compliance & Protection</h3>
+                            <p class="card-text text-light">
+                                With industry-grade compliance, brute force protection, and Cloudflare's CDN, all essentials are covered from day one.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card col-md-4 bg-dark">
+                        <div class="card-body">
+                            <h3 class="feature-title">Scale With Ease</h3>
+                            <p class="card-text text-light">
+                                Adaptable to your business needs, Revenue Defender scales with your business, ensuring your website remains secure and responsive as you grow.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <div id="security" class="row g-4 mb-5">
-          <h2 class="text-center mb-4">Security Features</h2>
-          <div class="col-md-2"></div>
-          <div class="col-md-8">
-            <ul class="feature-list"></ul>
-              <li><strong>User Authentication and Verification:</strong> Secure, scalable login, user verification, and password reset processes are handled automatically.</li>
-              <li><strong>Automatic Compliance Management:</strong> Fully compliant with the latest data protection standards so you can focus on your product.</li>
-              <li><strong>Cloudflare Protection Built-In:</strong> Optional DDoS and WAF protection and optimized content delivery ensure high performance and security.</li>
-              <li><strong>Bot Security:</strong> Frictionless user experience without sacrificing protection against brute-force and password stuffing attacks.</li>
-            </ul>
-          </div>
-          <div class="col-md-2"></div>
-        </div>
+        <!-- Integration Section -->
+        <section class="feature-section" id="integrations">
+            <div class="container text-center">
+                <h2 class="feature-title">Key Features</h2>
+                <p class="feature-description">
+                    Easily integrates with tools like Okta and Stripe for advanced user management and billing, leading to 10x faster launch times.
+                </p>
+                <div class="row mt-4">
+                    <div class="card col-md-3 bg-dark">
+                        <div class="card-body">
+                            <p class="card-text text-light">Secure, scalable login, user verification, and password reset processes are handled automatically.</p>
+                        </div>
+                    </div>
+                    <div class="card col-md-3 bg-dark">
+                        <div class="card-body">
+                            <p class="card-text text-light">Fully compliant with the latest data protection standards so you can focus on your product or service.</p>
+                        </div>
+                    </div>
+                    <div class="card col-md-3 bg-dark">
+                        <div class="card-body">
+                            <p class="card-text text-light">Optional DDoS and WAF protection and optimized content delivery ensure high performance and security.</p>
+                        </div>
+                    </div>
+                    <div class="card col-md-3 bg-dark">
+                        <div class="card-body">
+                            <p class="card-text text-light">Frictionless user experience without sacrificing protection against brute-force and password stuffing attacks.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <!-- Sign-up CTA -->
-        <div class="text-center">
-          <p class="lead mb-4">Ready to secure your app's future?</p>
-          <p>
-            <a href="/rd-login" class="btn btn-primary me-3">Login here</a>
-            <a href="/rd-register" class="btn btn-success">Sign up for FREE</a>
-          </p>
-        </div>
-      </div>
-    </div>
-    <br><br><br>
-    <footer id="footer" class="w-100 text-center p-3 bg-light" aria-label="Footer with link to Terms and Conditions">
-       <a href="<!--TOC_URL-->" aria-label="Terms and Conditions">Terms and Conditions</a>. Powered by <a href="https://revenuedefender.com/">Revenue Defender</a>
-    </footer>
-    <script src="./static/js/dropdown.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" defer></script>
-    <script src="https://www.googletagmanager.com/gtag/js?id=G-D9C48FCTCE" defer></script>
-    <script src="/static/js/ga.js" defer async></script>
-  </body>
+        <!-- AI Assistant Section -->
+        <section class="feature-section">
+            <div class="container text-center">
+                <h2 class="feature-title">Defense with Speed</h2>
+                <p class="feature-description">
+                    Revenue Defender is your authentication assistant that helps you identify threats and optimize revenue. Normally you to choose two: speed to market, quality, or secure.  With Revenue Defender you no longer have to choose just two, because Revenue Defender handles quality and security, so that you can focus on speed to market.
+                </p>
+            </div>
+        </section>
+
+        <!-- Call to Action Section -->
+        <section class="hero-section" id="waitlist">
+            <div class="container text-center">
+                <h2 class="feature-title">Take Control of Your Revenue</h2>
+                <p>Join forward-thinking businesses that rely on Revenue Defender for peace of mind and protection.</p>
+                <a href="https://revenuedefender.com/rd-contact?page=waitlist" class="btn btn-custom">Join the Waitlist</a>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer id="footer" class="w-100 text-center p-3 bg-dark" aria-label="Footer with link to Terms and Conditions">
+            Copyright &copy; 2024 Revenue Defender. All rights reserved. <a href="/toc.html" aria-label="Terms and Conditions">Terms and Conditions</a>. Powered by <a href="https://revenuedefender.com/">Revenue Defender</a>
+        </footer>
+        <script src="./static/js/dropdown.js" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" defer></script>
+        <script src="https://www.googletagmanager.com/gtag/js?id=G-D9C48FCTCE" defer></script>
+        <script src="/static/js/ga.js" defer async></script>
+    </body>
 </html>
+
