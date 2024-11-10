@@ -23,13 +23,18 @@ let loggedoutnav = [{
   "href": "/rd-forgot"
 }];
 
-async function updateNavigation(isAuthenticated, isAdmin) {
+async function updateNavigation(isAuthenticated, isAdmin, regLocked) {
   const dropdownMenu = document.querySelector('.dropdown-menu');
   if (!dropdownMenu) return;
 
   dropdownMenu.innerHTML = ''; // Clear existing menu items
 
   let navItems = isAuthenticated ? loggedinnav : loggedoutnav;
+
+  // Filter out Register link if registration is locked
+  if (regLocked) {
+    navItems = navItems.filter(item => item.name !== "Register");
+  }
 
   // Remove the current page's link from the dropdown
   const currentFullPath = window.location.pathname + window.location.search;
@@ -76,7 +81,8 @@ async function checkAuthentication() {
 
     const isAuthenticated = data.valid === 1;
     const isAdmin = data.admin === 1;
-    updateNavigation(isAuthenticated, isAdmin);
+    const regLocked = data.reg_locked === 1;
+    updateNavigation(isAuthenticated, isAdmin, regLocked);
 
     // Optional: update auth status display
     let authStatusDiv = document.getElementById('auth-status');
@@ -87,7 +93,7 @@ async function checkAuthentication() {
 
   } catch (error) {
     console.error('Detailed error:', error);
-    updateNavigation(false, false);
+    updateNavigation(false, false, false);
     
     // Optional: update auth status display
     let authStatusDiv = document.getElementById('auth-status');
