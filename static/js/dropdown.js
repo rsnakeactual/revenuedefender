@@ -8,6 +8,9 @@ let loggedinnav = [{
   "name": "Change Password",
   "href": "/rd-dashboard?page=password-reset"
 }, {
+  "name": "API Settings",
+  "href": "/rd-dashboard?page=api-settings"
+}, {
   "name": "Account Settings",
   "href": "/rd-dashboard?page=account-settings"
 }];
